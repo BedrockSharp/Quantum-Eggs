@@ -6,7 +6,7 @@
     },
     "exported_at": "2026-04-18T00:00:00+00:00",
     "name": "QuantumMC (BedrockSharp)",
-    "author": "Vastria@github.com",
+    "author": "Quantum@github.com",
     "description": "QuantumMC - A Minecraft Bedrock server implementation by BedrockSharp",
     "features": [],
     "docker_images": {
