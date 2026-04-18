@@ -2,7 +2,7 @@
     "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
     "meta": {
         "version": "PTDL_v2",
-        "update_url": null
+        "update_url": "https://github.com/BedrockSharp/Quantum-Eggs/blob/main/egg-bedrocksharp.json"
     },
     "exported_at": "2026-04-18T00:00:00+00:00",
     "name": "QuantumMC (BedrockSharp)",
