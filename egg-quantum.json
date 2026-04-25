@@ -2,19 +2,20 @@
     "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
     "meta": {
         "version": "PTDL_v2",
-        "update_url": "https://github.com/BedrockSharp/Quantum-Eggs/blob/main/egg-quantum.json"
+        "update_url": "https://github.com/BedrockSharp/Quantum-Eggs/raw/refs/heads/main/egg-quantum.json"
     },
-    "exported_at": "2026-04-18T00:00:00+00:00",
+    "exported_at": "2026-03-23T17:19:28+00:00",
     "name": "QuantumMC (BedrockSharp)",
-    "author": "contact@quantum.org",
-    "description": "QuantumMC - A Minecraft Bedrock server implementation by BedrockSharp",
+    "author": "QuantumMC@github.com",
+    "description": "QuantumMC PTERODACTYL EGG",
     "features": [],
     "docker_images": {
+        "ghcr.io/ptero-eggs/yolks:dotnet_10": "ghcr.io/ptero-eggs/yolks:dotnet_10",
         "ghcr.io/ptero-eggs/yolks:dotnet_9": "ghcr.io/ptero-eggs/yolks:dotnet_9",
-        "ghcr.io/ptero-eggs/yolks:dotnet_10": "ghcr.io/ptero-eggs/yolks:dotnet_10"
+        "ghcr.io/ptero-eggs/yolks:dotnet_8": "ghcr.io/ptero-eggs/yolks:dotnet_8",
     },
     "file_denylist": [],
-    "startup": "dotnet QuantumMC.dll",
+    "startup": "./start.sh",
     "config": {
         "files": "{}",
         "startup": "{\"done\": \"\"}",
@@ -23,20 +24,10 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!/bin/bash\n\napt-get update > /dev/null 2>&1\napt-get install -y wget curl > /dev/null 2>&1\nmkdir -p /mnt/server/\ncd /mnt/server\n\n# Use panel variable or fallback to alpha2\nQUANTUMMC_VERSION=\"${QUANTUMMC_VERSION:-0.0.1-alpha2}\"\n\n# Download QuantumMC from BedrockSharp GitHub releases\nwget -q -O QuantumMC.dll \"https://github.com/BedrockSharp/QuantumMC/releases/download/${QUANTUMMC_VERSION}/QuantumMC.dll\"\n\necho \"QuantumMC ${QUANTUMMC_VERSION} downloaded successfully.\"",
+            "script": "#!/bin/bash\n\napt-get update > /dev/null 2>&1\napt-get install -y wget > /dev/null 2>&1\nmkdir -p /mnt/server/\ncd /mnt/server\n\n# Download DaemonMC start.sh\nwget -q -O start.sh https://github.com/BedrockSharp/Quantum-Eggs/raw/refs/heads/main/start.sh\nchmod +x start.sh",
             "container": "debian:bullseye-slim",
             "entrypoint": "bash"
         }
     },
-    "variables": [
-        {
-            "name": "QuantumMC Version",
-            "description": "The version of QuantumMC to download. Check https://github.com/BedrockSharp/QuantumMC/releases for available versions.",
-            "env_variable": "QUANTUMMC_VERSION",
-            "default_value": "0.0.1-alpha2",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string|max:20"
-        }
-    ]
+    "variables": []
 }
