@@ -5,10 +5,7 @@ _The Quantum Egg for Pterodactyl is a preconfigured resource that makes it easy 
 If you are reading this it looks like you are looking to add an egg to your server.
 
 > [!NOTE]
-> This egg requires the **.NET 9** Docker image (`ghcr.io/ptero-eggs/yolks:dotnet_9`). Make sure your node has access to this image before importing.
-
-> [!CAUTION]
-> Do **not** use .NET 9 or .NET 10 images — QuantumMC 0.0.1-alpha1 targets .NET 9 specifically. Using an incorrect runtime may cause the server to fail to start.
+> This egg requires the **.NET 10** Docker image (`ghcr.io/ptero-eggs/yolks:dotnet_10`). Make sure your node has access to this image before importing.
 
 1. Download the JSON file named `egg-quantummc.json` located in this repository.
 2. In your panel, go to the **Nests** section in the admin area.
