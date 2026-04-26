@@ -1,12 +1,11 @@
 #!/bin/bash
 # -----------------------------------------------
-# DaemonMC - Pterodactyl Start Script
-# Runtime: .NET 10 | Auto-restart on crash
+# QuantumMC - Pterodactyl Start Script
+# Runtime: .NET 10
 # -----------------------------------------------
 QUANTUM_DLL="QuantumMC.dll"
 DOWNLOAD_URL="https://github.com/BedrockSharp/QuantumMC/releases/download/v0.0.1-alpha2/QuantumMC.dll"
 cd /home/container || { echo "[ERROR] Could not change to /home/container"; exit 1; }
-# --- Check for DaemonMC.dll, download if missing ---
 if [ ! -f "$QUANTUM_DLL" ]; then
     echo "[WARN] $QUANTUM_DLL not found. Attempting to download..."
     if command -v wget &> /dev/null; then
@@ -23,7 +22,6 @@ if [ ! -f "$QUANTUM_DLL" ]; then
     fi
     echo "[INFO] Download complete."
 fi
-# --- Auto-restart loop ---
 CRASH_COUNT=0
 MAX_CRASHES=5
 CRASH_WINDOW=60  # seconds
@@ -39,7 +37,6 @@ while true; do
         exit 0
     fi
     echo "[WARN] Server stopped with exit code $EXIT_CODE."
-    # Reset crash counter if last crash was more than CRASH_WINDOW seconds ago
     if [ $TIME_SINCE_LAST -gt $CRASH_WINDOW ]; then
         CRASH_COUNT=0
     fi
