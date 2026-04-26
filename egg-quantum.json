@@ -24,7 +24,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!/bin/bash\n\napt-get update > /dev/null 2>&1\napt-get install -y wget > /dev/null 2>&1\nmkdir -p /mnt/server/\ncd /mnt/server\n\n# Download DaemonMC start.sh\nwget -q -O start.sh https://github.com/BedrockSharp/Quantum-Eggs/raw/refs/heads/main/start.sh\nchmod +x start.sh",
+            "script": "#!/bin/bash\n\napt-get update > /dev/null 2>&1\napt-get install -y wget > /dev/null 2>&1\nmkdir -p /mnt/server/\ncd /mnt/server\n\n# Download QuantumMC start.sh\nwget -q -O start.sh https://github.com/BedrockSharp/Quantum-Eggs/raw/refs/heads/main/start.sh\nchmod +x start.sh",
             "container": "debian:bullseye-slim",
             "entrypoint": "bash"
         }
